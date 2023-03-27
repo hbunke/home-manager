@@ -12,6 +12,7 @@
     pkgs.terminator
     pkgs.bat
     pkgs.most
+    pkgs.ncdu
   ];
 
   home.file.".config/terminator/config".source = ./terminator;
@@ -34,7 +35,7 @@
   programs.fish = {
     enable = true;
     shellInit = "set -gx LESS -RSM~gIsw
-                 set -gx PAGER bat
+                 set -gx PAGER mostcn
                  set -gx EDITOR vim
                  set -gx PATH $PATH ~/bin
                  ";  
@@ -43,6 +44,8 @@
       docker = "sudo docker";
       top = "htop";
       cat = "bat --paging=never";
+      ll = "ls -lpaFh --color=always | most";
+      ncdu = "ncdu --color dark";
     };
   };
 
