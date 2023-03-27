@@ -33,6 +33,11 @@
   
   programs.fish = {
     enable = true;
+    shellInit = "set -gx LESS -RSM~gIsw
+                 set -gx PAGER bat
+                 set -gx EDITOR vim
+                 set -gx PATH $PATH ~/bin
+                 ";  
     shellAliases = {
       cp = "cp -v";
       docker = "sudo docker";
