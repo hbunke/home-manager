@@ -13,6 +13,8 @@
     pkgs.bat
     pkgs.most
     pkgs.ncdu
+    pkgs.sshuttle
+    pkgs.tilix
   ];
 
   home.file.".config/terminator/config".source = ./terminator;
