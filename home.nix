@@ -35,7 +35,7 @@
   programs.fish = {
     enable = true;
     shellInit = "set -gx LESS -RSM~gIsw
-                 set -gx PAGER mostcn
+                 set -gx PAGER most
                  set -gx EDITOR vim
                  set -gx PATH $PATH ~/bin
                  ";  
