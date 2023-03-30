@@ -15,6 +15,7 @@
     pkgs.ncdu
     pkgs.sshuttle
     pkgs.tilix
+    pkgs.exa
   ];
 
   home.file.".config/terminator/config".source = ./terminator;
