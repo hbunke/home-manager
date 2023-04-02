@@ -41,12 +41,13 @@
                  set -gx PAGER most
                  set -gx EDITOR vim
                  set -gx PATH $PATH ~/bin
+                 set -gx MANPAGER sh -c 'col -bx | bat -l man -p'
+                 set -gx BAT_THEME Monokai Extended
                  ";  
     shellAliases = {
       cp = "cp -v";
       docker = "sudo docker";
       top = "htop";
-      cat = "bat --paging=never";
       ll = "ls -lpaFh --color=always | most";
       ncdu = "ncdu --color dark";
     };
