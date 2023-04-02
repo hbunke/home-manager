@@ -21,7 +21,8 @@
   home.file.".config/terminator/config".source = ./terminator;
   home.file.".config/htop/htoprc".source = ./htoprc;
   home.file.".config/fish/conf.d/nix-env.fish".source = ./nix-env.fish;
-
+  home.file.".config/fish/functions/fish_prompt.fish".source = ./fish_prompt.fish;
+  
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
@@ -47,7 +48,8 @@
       docker = "sudo docker";
       top = "htop";
       cat = "bat --paging=never";
-      ll = "ls -lpaFh --color=always | most";
+      #ll = "ls -lpaFh --color=always | most";
+      ll = "exa -la --color=always | bat";
       ncdu = "ncdu --color dark";
     };
   };
