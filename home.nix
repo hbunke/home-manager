@@ -38,6 +38,11 @@
     top = "htop";
   };
 
+  home.sessionPath = [
+    "$HOME/bin"
+  ];
+
+
 
 
   home.file.".config/terminator/config".source = ./terminator;
