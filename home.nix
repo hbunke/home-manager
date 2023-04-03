@@ -18,6 +18,28 @@
     pkgs.exa
   ];
 
+
+  # Variables for all shells (GENIAL!)
+  home.sessionVariables = {
+    LESS = "-RSM~gIsw";
+    PAGER = "most";
+    EDITOR = "vim";
+    #PATH = $PATH ~/bin;
+    MANPAGER = "sh -c 'col -bx | bat -l man -p'";
+    BAT_THEME = "Monokai Extended";
+  };
+
+  # Same for aliases
+  home.shellAliases = {
+    cp = "cp -v";
+    docker = "sudo docker";
+    ll = "exa -la --color=always | bat";
+    ncdu = "ncdu --color dark";
+    top = "htop";
+  };
+
+
+
   home.file.".config/terminator/config".source = ./terminator;
   home.file.".config/htop/htoprc".source = ./htoprc;
   home.file.".config/fish/conf.d/nix-env.fish".source = ./nix-env.fish;
@@ -38,22 +60,7 @@
   
   programs.fish = {
     enable = true;
-    shellInit = "set -gx LESS -RSM~gIsw
-                 set -gx PAGER most
-                 set -gx EDITOR vim
-                 set -gx PATH $PATH ~/bin
-                 set -gx MANPAGER sh -c 'col -bx | bat -l man -p'
-                 set -gx BAT_THEME Monokai Extended
-                 ";  
-    shellAliases = {
-      cp = "cp -v";
-      docker = "sudo docker";
-      top = "htop";
-      cat = "bat --paging=never";
-      #ll = "ls -lpaFh --color=always | most";
-      ll = "exa -la --color=always | bat";
-      ncdu = "ncdu --color dark";
-    };
+    # variables and aliases set by home.shellVariables and home.shellAliases for all shells    
   };
 
 }
