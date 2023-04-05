@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/bunke";
   home.packages = [
     pkgs.htop
-    pkgs.vim
+    #pkgs.vim
     pkgs.vscode
     pkgs.terminator
     pkgs.bat
@@ -49,6 +49,9 @@
   home.file.".config/fish/conf.d/nix-env.fish".source = ./config/nix-env.fish;
   home.file.".config/fish/functions/fish_prompt.fish".source = ./config/fish_prompt.fish;
   home.file.".config/tilix/schemes".source = ./config/tilix/schemes;
+  
+  # TODO: configure ZSH with home-manager options
+  home.file.".zshrc".source = ./config/zshrc;
 
   
   # This value determines the Home Manager release that your
@@ -68,5 +71,21 @@
     enable = true;
     # variables and aliases set by home.shellVariables and home.shellAliases for all shells    
   };
+
+
+  programs.vim = {
+    enable  = true;
+    defaultEditor = true;
+    plugins = with pkgs.vimPlugins; [
+      nerdtree
+      vim-nerdtree-tabs
+      vim-airline
+      vim-airline-themes
+      vim-colorschemes
+      vim-nix
+
+    ];
+  };
+
 
 }

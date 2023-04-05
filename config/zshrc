@@ -1,0 +1,105 @@
+###startup Z-Shell
+
+
+#autocompletion
+setopt AUTOLIST
+autoload -U compinit
+compinit
+
+autoload -U colors
+colors
+
+setopt extended_glob
+setopt prompt_subst
+
+
+### VCS at prompt
+autoload -Uz vcs_info
+#zstyle ':vcs_info:*' debug true
+zstyle ':vcs_info:*' enable hg git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' get-revision true
+###example from zshcontrib(1)
+#zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+#zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+
+zstyle ':vcs_info:*' unstagedstr "%F{1}+%f"
+#zstyle ':vcs_info:*' stagedstr "%F{1}+%f"
+zstyle ':vcs_info:*' actionformats "%B%F{2}[%s|%F{1}%a%f]%%b%c%u "
+zstyle ':vcs_info:*' formats '%B%F{2}[%s %b]%%b%c%u '
+
+#export PS1='%B[%n@%m]:%~ $%b ${vcs_info_msg_0_}'
+#export PS1='%F{5}[%F{2}%n%F{5}] %F{3}%3~ ${vcs_info_msg_0_}%f%# '
+
+#export PS1='%B[%n@%m]:%~ $%b ${vcs_info_msg_0_}'
+# export PS1='%B[%n%F{green}@%m%B%{$reset_color%}]:%~ $%b ${vcs_info_msg_0_}'
+export PS1='%B[%n%F{green}@%m%f]:%~ $%b ${vcs_info_msg_0_}'
+
+
+
+#history
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+
+case $TERM in
+    xterm*)
+    precmd () {
+        print -Pn "\e]0;[%n@%m]: %~\a"
+        vcs_info
+    }
+     ;;
+esac
+
+# avoid this ugly gui password asking with git
+unset SSH_ASKPASS
+
+#setopt correct
+setopt auto_cd
+zstyle ':completion:*' menu select=2
+
+
+############### Environment ####################################
+export LANG=en_US.UTF-8
+#export LANG=de_DE.UTF-8
+#export LC_ALL=de_DE.UTF-8
+export LC_CTYPE=de_DE.UTF-8
+
+export LC_COLLATE=POSIX
+
+export PATH=$PATH:$HOME'/.local/bin':$HOME'/bin'
+
+export EDITOR=vim
+
+#PAGER
+export PAGER="most"
+
+# less can do colors ;-)
+export LESS="-RSM~gIsw"
+
+#export PYTHONSTARTUP=~/.pythonrc
+export VISUAL=vim
+export DATE=`date "+%Y%m%d.%H%M"`
+
+
+################## ALIAS #######################################
+alias ll='ls -lpaFh --color=always | most'
+alias dir='ls -lLa | grep "^d"'
+#alias su='su -m'
+alias ping='ping -v'
+alias grep="grep --line-number --exclude-dir=.git --color=auto"
+export GREP_COLOR="1;39"
+
+#don't wanna modify pacman.conf for this
+alias pacman='pacman --color auto'
+alias top='htop'
+alias de="setxkbmap de -variant nodeadkeys"
+alias us="setxkbmap us"
+alias gvim="vim -g"
+alias ncdu="ncdu -x --color dark"
+alias cp="cp -v"
+alias ls='ls -p --color=always'
+
+
+
+if [ -e /home/bunke/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bunke/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
