@@ -1,0 +1,15 @@
+" vim: set ft=vim:
+
+set textwidth=65
+set nowrap nolist
+set wrapmargin=0 " wrapmargin is ignored when textwidth is non-zero
+
+" colorscheme zenburn
+" colorscheme gruvbox
+" colorscheme solarized
+
+" First Quote is linked to Comment?
+" hi Comment cterm=italic
+
+
+map <C-j> gqap

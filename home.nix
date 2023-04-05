@@ -52,6 +52,7 @@
   
   # TODO: configure ZSH with home-manager options
   home.file.".zshrc".source = ./config/zshrc;
+  home.file.".vim".source = ./config/vim;
 
   
   # This value determines the Home Manager release that your
@@ -83,8 +84,16 @@
       vim-airline-themes
       vim-colorschemes
       vim-nix
-
+      vim-fugitive
+      nginx-vim
     ];
+    settings = {
+      background = "dark";
+      mouse = "a";
+      shiftwidth = 4;
+      expandtab = true;
+      tabstop = 4;
+    };
   };
 
 

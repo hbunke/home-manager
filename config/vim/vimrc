@@ -1,0 +1,88 @@
+" vim config
+" gvimrc overrrides this eventually
+
+
+set nocompatible
+syntax enable
+set t_Co=256
+colorscheme atom
+set encoding=utf-8
+set nowrap 
+set wildmenu
+let mapleader = ","
+set formatoptions+=tcrq
+set textwidth=79
+"set colorcolumn=80
+"set cc=+1
+" set hidden
+set backspace=2
+set showmode
+set showcmd
+set shiftround
+set autoindent
+set smartindent
+set syn=auto
+set title
+set titleold=""
+set ruler
+set hlsearch
+set switchbuf=useopen,split
+set nocp
+set ofu=syntaxcomplete#Complete
+set gtl=[%N]\ %t
+set statusline=%<%f\ %y\ %*\ %h%m%r%=%l,%c%V\ %P
+set statusline+=\ \ %{fugitive#statusline()}
+
+"statusline immer an (mit hintergrund etc.)
+set laststatus=2
+" set dir=~/.vimswap
+set fileformats=unix,dos
+" unnamed register to system clipboard
+set clipboard+=unnamed
+
+" NERDTree
+let g:NERDTreeCaseSensitiveSort=1
+let g:NERDTreeHijackNetrw=1
+let g:NERDTreeIgnore = ['\.pyc$', '\.git$', 'Paste*', '\.egg-info$', '\.aux', '\.bbl', '\.bcf', '\.blg', '\.fdb_latexmk', '\.fls', '\.run.xml', '\.synctex.gz', '\.log' ]
+let g:NERDTreeShowHidden=1
+let g:NERDTreeWinSize=31
+let g:nerdtree_tabs_open_on_gui_startup = 1
+let g:nerdtree_tabs_focus_on_files = 1
+let g:nerdtree_tabs_synchronize_view = 1
+let g:nerdtree_tabs_open_on_new_tab = 1
+map <F9> <plug>NERDTreeTabsToggle<CR>
+
+
+""""" keybindings """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"make that link jumping in vim help easier
+nmap t <C-]>
+
+map Q gq
+" trying to imitate some oooold Pico / jpico settings
+map <C-k> dd
+map <C-j> gqap
+map <Leader>p "+gP
+
+" <C-v> for blockwise visual mode does not work in terminal
+map <Leader>v <C-V>
+
+
+" Wechseln zwischen Fenstern
+map <C-Left> <C-W><Left>
+map <C-Right> <C-W><Right>
+map <C-Up> <C-W><Up>
+map <C-Down> <C-W><Down>
+
+
+"""""  end keybindings """"""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+autocmd BufRead /tmp/mutt* :source ~/.vim/mail.rc
+" nix mail
+autocmd BufRead /run/user/*/mutt* :source ~/.vim/mail.rc
+autocmd BufRead *.nix :set syntax=nix
+"txt files are supposed to be in markdown. doesn't hurt otherwise
+autocmd BufRead *.txt :set syntax=markdown
+
+
