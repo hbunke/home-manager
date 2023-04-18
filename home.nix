@@ -16,6 +16,7 @@
     pkgs.sshuttle
     pkgs.tilix
     pkgs.exa
+    pkgs.zsh
   ];
 
 
@@ -50,7 +51,7 @@
   home.file.".config/fish/functions/fish_prompt.fish".source = ./config/fish_prompt.fish;
   home.file.".config/tilix/schemes".source = ./config/tilix/schemes;
   
-  # TODO: configure ZSH with home-manager options
+  # TODO: configure zsh and vim with home-manager options
   home.file.".zshrc".source = ./config/zshrc;
   home.file.".vim".source = ./config/vim;
 
