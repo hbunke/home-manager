@@ -87,6 +87,7 @@
       vim-nix
       vim-fugitive
       nginx-vim
+      swayconfig-vim
     ];
     settings = {
       background = "dark";
