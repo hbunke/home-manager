@@ -97,5 +97,17 @@
     };
   };
 
+  programs.alacritty = {
+    enable = true;
+    settings = {
+      font.size = 16.0;
+      font.normal.family = "Source Code Pro";
+      import = [
+        "~/.config/alacritty/themes/themes/dark_pastels.yaml"
+      ];
+    };
+
+  };
+
 
 }
