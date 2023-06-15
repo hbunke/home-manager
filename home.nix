@@ -1,20 +1,31 @@
+# core config for all machines
+
 { config, pkgs, ... }:
 
+let 
+  hostname = builtins.getEnv "HOSTNAME";
+  desktop_hostnames = [
+    "laris"
+    "nixos"
+    "nb-lxzt1863"
+];
+  
+in
 {
+  imports = if builtins.elem hostname desktop_hostnames 
+    then [ ./desktop.nix ]
+    else [ ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "bunke";
   home.homeDirectory = "/home/bunke";
   home.packages = [
     pkgs.htop
-    #pkgs.vim
-    pkgs.vscode
-    pkgs.terminator
     pkgs.bat
     pkgs.most
     pkgs.ncdu
-    pkgs.sshuttle
-    pkgs.tilix
+    #pkgs.sshuttle
     pkgs.exa
     pkgs.zsh
   ];
@@ -44,12 +55,10 @@
   ];
 
 
-
-  home.file.".config/terminator/config".source = ./config/terminator;
   home.file.".config/htop/htoprc".source = ./config/htoprc;
   home.file.".config/fish/conf.d/nix-env.fish".source = ./config/nix-env.fish;
   home.file.".config/fish/functions/fish_prompt.fish".source = ./config/fish_prompt.fish;
-  home.file.".config/tilix/schemes".source = ./config/tilix/schemes;
+  
   
   # TODO: configure zsh and vim with home-manager options
   home.file.".zshrc".source = ./config/zshrc;
@@ -100,18 +109,6 @@
       tabstop = 4;
     };
   };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      font.size = 13.0;
-      font.normal.family = "Source Code Pro";
-      import = [
-        "~/.config/alacritty/themes/themes/dark_pastels.yaml"
-      ];
-    };
-
-  };
-
+  
 
 }
