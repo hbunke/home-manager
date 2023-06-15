@@ -17,6 +17,7 @@
     palette = "#646464:#f58e8e:#a9d3ab:#fed37e:#7aabd4:#d6add5:#79d4d5:#d4d4d4:#646464:#f58e8e:#a9d3ab:#fed37e:#7aabd4:#d6add5:#79d4d5:#d2d8d9"
     bold_is_bright = True
     use_system_font = True
+    show_titlebar = False
   [[Solarized Light]]
     background_color = "#eee8d5"
     cursor_color = "#002b36"
@@ -26,7 +27,6 @@
   [[Chalk]]
     background_color = "#2b2d2e"
     cursor_color = "#708284"
-    font = Liberation Mono 10
     foreground_color = "#d2d8d9"
     show_titlebar = False
     palette = "#646464:#f58e8e:#a9d3ab:#fed37e:#7aabd4:#d6add5:#79d4d5:#d4d4d4:#646464:#f58e8e:#a9d3ab:#fed37e:#7aabd4:#d6add5:#79d4d5:#d2d8d9"
