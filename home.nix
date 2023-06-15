@@ -2,17 +2,8 @@
 
 { config, pkgs, ... }:
 
-let 
-  hostname = builtins.getEnv "HOSTNAME";
-  desktop_hostnames = [
-    "laris"
-    "nixos"
-    "nb-lxzt1863"
-];
-  
-in
 {
-  imports = if builtins.elem hostname desktop_hostnames 
+  imports = if builtins.getEnv "DESKTOP_SESSION" != ""
     then [ ./desktop.nix ]
     else [ ];
 

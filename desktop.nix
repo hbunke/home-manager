@@ -5,11 +5,14 @@
 {
   home.packages = [
     pkgs.vscode
+    pkgs.brave
+    pkgs.obsidian
     pkgs.terminator
     pkgs.tilix
     pkgs.source-sans-pro
     pkgs.source-code-pro
-    pkgs.cantarell-fonts  
+    pkgs.cantarell-fonts
+    pkgs.fira-code 
   ];
 
   home.file.".config/terminator/config".source = ./config/terminator;
