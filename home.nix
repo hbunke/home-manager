@@ -51,9 +51,11 @@
   home.file.".config/fish/functions/fish_prompt.fish".source = ./config/fish_prompt.fish;
   
   
+  
   # TODO: configure zsh and vim with home-manager options
   home.file.".zshrc".source = ./config/zshrc;
   home.file.".vim".source = ./config/vim;
+
 
   
   # This value determines the Home Manager release that your
