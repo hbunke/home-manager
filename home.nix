@@ -11,14 +11,14 @@
   # paths it should manage.
   home.username = "bunke";
   home.homeDirectory = "/home/bunke";
-  home.packages = [
-    pkgs.htop
-    pkgs.bat
-    pkgs.most
-    pkgs.ncdu
-    #pkgs.sshuttle
-    pkgs.exa
-    pkgs.zsh
+  home.packages = with pkgs; [
+    htop
+    bat
+    most
+    ncdu
+    #sshuttle
+    exa
+    zsh
   ];
 
 
@@ -29,7 +29,7 @@
     EDITOR = "vim";
     #PATH = $PATH ~/bin;
     MANPAGER = "sh -c 'col -bx | bat -l man -p'";
-    BAT_THEME = "Monokai Extended";
+    BAT_THEME = "Nord";
   };
 
   # Same for aliases
@@ -93,6 +93,7 @@
       vim-fugitive
       nginx-vim
       swayconfig-vim
+      everforest
     ];
     settings = {
       background = "dark";
