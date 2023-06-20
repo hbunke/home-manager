@@ -1,0 +1,28 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "../waybar"
+        },
+        {
+            "path": "../../../../../run/user/1000/doc/f523b064/sway"
+        },
+        {
+            "path": "../../../../../run/user/1000/doc/5b0b3c0/sway"
+        },
+        {
+            "path": "../../../../../run/user/1000/doc/ac225fec/sway"
+        },
+        {
+            "path": "../../../../../run/user/1000/doc/1f0acd6f/sway-systemd"
+        },
+        {
+            "path": "../swaylock"
+        },
+        {
+            "path": "../dunst"
+        }
+    ]
+}

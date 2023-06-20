@@ -3,6 +3,10 @@
 {config, pkgs, ... }:
 
 {
+  home.file.".config/sway".source = ./config/sway; # for now only source the sway config
+  home.file.".config/foot/themes".source = ./config/foot/themes;
+
+  
   home.packages = with pkgs; [
     vscode
     brave
@@ -30,8 +34,7 @@
     };
   };
 
-  
-  home.file.".config/foot/themes".source = ./config/foot/themes;
+    
   programs.foot = {
     enable = true;
     settings = {
