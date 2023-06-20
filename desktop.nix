@@ -3,16 +3,19 @@
 {config, pkgs, ... }:
 
 {
-  home.packages = [
-    pkgs.vscode
-    pkgs.brave
-    pkgs.obsidian
-    pkgs.signal-desktop
-    pkgs.xfce.xfce4-terminal
-    pkgs.source-sans-pro
-    pkgs.source-code-pro
-    pkgs.cantarell-fonts
-    pkgs.fira-code 
+  home.packages = with pkgs; [
+    vscode
+    brave
+    obsidian
+    signal-desktop
+    xfce.xfce4-terminal
+    evince
+    
+    ## fonts
+    source-sans-pro
+    source-code-pro
+    cantarell-fonts
+    fira-code 
   ];
   
 
