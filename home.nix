@@ -19,6 +19,7 @@
     #sshuttle
     exa
     zsh
+    neofetch
   ];
 
 
