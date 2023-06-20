@@ -31,14 +31,14 @@
   };
 
   
-  
+  home.file.".config/foot/themes".source = ./config/foot/themes;
   programs.foot = {
     enable = true;
     settings = {
       main = {
-        font = "Source Code Pro:pixelsize=22";
+        font = "Source Code Pro:size=11";
         dpi-aware = "auto";
-        include = "~/.config/foot/themes/onedark";
+        include = "~/.config/foot/themes/nord";
       };
       scrollback = {
         lines = 10000;
