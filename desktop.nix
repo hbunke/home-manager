@@ -37,6 +37,10 @@
         dpi-aware = "auto";
         include = "~/.config/foot/themes/onedark";
       };
+      scrollback = {
+        lines = 10000;
+      };
+      
     };
   };
   
