@@ -30,6 +30,20 @@
     };
   };
 
+  
+  
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        font = "Source Code Pro:pixelsize=22";
+        dpi-aware = "auto";
+        include = "~/.config/foot/themes/onedark";
+      };
+    };
+  };
+  
+
   fonts.fontconfig.enable = true; # !run fc-cache -f after installing fonts
 
 }
