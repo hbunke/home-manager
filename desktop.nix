@@ -3,7 +3,12 @@
 {config, pkgs, ... }:
 
 {
-  home.file.".config/sway".source = ./config/sway; # for now only source the sway config
+  ## # for now only source the sway config
+  ## switched off since sway config on nixos is different
+  # home.file.".config/sway".source = ./config/sway; 
+
+  # source foot themes
+  # ? could this be sourced from the original github repo?
   home.file.".config/foot/themes".source = ./config/foot/themes;
 
   
@@ -14,6 +19,7 @@
     signal-desktop
     xfce.xfce4-terminal
     evince
+    webex
     
     ## fonts
     source-sans-pro
