@@ -37,9 +37,9 @@
         term="xterm-256color";
         font = "Source Code Pro:size=11";
         dpi-aware = "auto";
-        # include = "~/.config/foot/themes/solarized-dark";
+        include = "~/.config/foot/themes/solarized-dark";
         # include = "~/.config/foot/themes/monokai-pro";
-        include = "~/.config/foot/themes/nord";
+        # include = "~/.config/foot/themes/nord";
       };
       scrollback = {
         lines = 10000;
@@ -55,7 +55,7 @@
       font.size = 13.0;
       font.normal.family = "Source Code Pro";
       import = [
-      #  "~/.config/alacritty/themes/themes/solarized_dark.yaml"
+      # "~/.config/alacritty/themes/themes/solarized_dark.yaml"
       "~/.config/alacritty/themes/themes/nord.yaml"
 
       ];
