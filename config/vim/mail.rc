@@ -1,6 +1,6 @@
 " vim: set ft=vim:
 
-set textwidth=65
+set textwidth=80
 set nowrap nolist
 set wrapmargin=0 " wrapmargin is ignored when textwidth is non-zero
 

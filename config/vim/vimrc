@@ -3,9 +3,9 @@
 
 
 set nocompatible
+colorscheme solarized
 syntax enable
 set t_Co=256
-colorscheme atom
 set encoding=utf-8
 set nowrap 
 set wildmenu
