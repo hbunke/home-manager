@@ -7,8 +7,6 @@
     then [ ./desktop.nix ]
     else [ ];
 
-  # Home Manager needs a bit of information about you and the
-  # paths it should manage.
   home.username = "bunke";
   home.homeDirectory = "/home/bunke";
   home.packages = with pkgs; [
@@ -20,8 +18,8 @@
     exa
     zsh
     neofetch
+    duf
   ];
-
 
   # Variables for all shells (GENIAL!)
   home.sessionVariables = {
@@ -40,8 +38,10 @@
     ll = "exa -la --color=always | bat";
     ncdu = "ncdu --color dark";
     top = "htop";
+    duf = "duf -hide special";
   };
 
+  # additional dirs for PATH
   home.sessionPath = [
     "$HOME/bin"
   ];
@@ -50,9 +50,7 @@
   home.file.".config/htop/htoprc".source = ./config/htoprc;
   home.file.".config/fish/conf.d/nix-env.fish".source = ./config/nix-env.fish;
   home.file.".config/fish/functions/fish_prompt.fish".source = ./config/fish_prompt.fish;
-  
-  
-  
+      
   # TODO: configure zsh and vim with home-manager options
   home.file.".zshrc".source = ./config/zshrc;
   home.file.".vim".source = ./config/vim;

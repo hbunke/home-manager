@@ -20,6 +20,7 @@
     xfce.xfce4-terminal
     evince
     webex
+    bitwarden
     
     ## fonts
     source-sans-pro
@@ -29,34 +30,42 @@
   ];
   
 
+  programs.foot = {
+    enable = true;
+    settings = {
+      main = {
+        term="xterm-256color";
+        font = "Source Code Pro:size=11";
+        dpi-aware = "auto";
+        # include = "~/.config/foot/themes/solarized-dark";
+        # include = "~/.config/foot/themes/monokai-pro";
+        include = "~/.config/foot/themes/nord";
+      };
+      scrollback = {
+        lines = 10000;
+      };
+    };
+  };
+    
+  
+
   programs.alacritty = {
     enable = true;
     settings = {
       font.size = 13.0;
       font.normal.family = "Source Code Pro";
       import = [
-        "~/.config/alacritty/themes/themes/dark_pastels.yaml"
+      #  "~/.config/alacritty/themes/themes/solarized_dark.yaml"
+      "~/.config/alacritty/themes/themes/nord.yaml"
+
       ];
     };
   };
 
     
-  programs.foot = {
-    enable = true;
-    settings = {
-      main = {
-        font = "Source Code Pro:size=11";
-        dpi-aware = "auto";
-        include = "~/.config/foot/themes/nord";
-      };
-      scrollback = {
-        lines = 10000;
-      };
-      
-    };
-  };
   
-
-  fonts.fontconfig.enable = true; # !run fc-cache -f after installing fonts
+  
+  # !run fc-cache -f after installing fonts
+  fonts.fontconfig.enable = true; 
 
 }
