@@ -48,7 +48,6 @@
   };
     
   
-
   programs.alacritty = {
     enable = true;
     settings = {
@@ -63,7 +62,21 @@
   };
 
     
-  
+  programs.kitty = {
+    enable = true;
+    font = {
+      name = "Source Code Pro";
+      size = 14;
+    };
+    shellIntegration = {
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+    };
+    theme = "Solarized Dark Higher Contrast";
+
+  };
+
+
   
   # !run fc-cache -f after installing fonts
   fonts.fontconfig.enable = true; 
