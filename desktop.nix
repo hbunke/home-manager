@@ -15,6 +15,8 @@
   home.packages = with pkgs; [
     vscode
     brave
+    firefox
+    google-chrome
     obsidian
     signal-desktop
     xfce.xfce4-terminal
@@ -37,9 +39,9 @@
         term="xterm-256color";
         font = "Source Code Pro:size=11";
         dpi-aware = "auto";
-        include = "~/.config/foot/themes/solarized-dark";
+        # include = "~/.config/foot/themes/solarized-dark";
         # include = "~/.config/foot/themes/monokai-pro";
-        # include = "~/.config/foot/themes/nord";
+        include = "~/.config/foot/themes/nord";
       };
       scrollback = {
         lines = 10000;
